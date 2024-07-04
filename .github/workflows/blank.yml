@@ -16,7 +16,7 @@ jobs:
         run: ezho "step1 from job1"
 
       - name: Run a multi-line script
-        if: steps.test1.outcome == 'failure'
+        if: failure() && steps.test1.outcome == 'failure'
         run: |
           echo Add other actions to build,
           echo step2 from job1.
