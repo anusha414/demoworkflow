@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run a one-line script
-        run: echo "step1 from job1"
+        run: ezho "step1 from job1"
 
       - name: Run a multi-line script
         run: |
