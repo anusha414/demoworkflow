@@ -11,10 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run a one-line script
+      - name: Run a test
+        id: test1
         run: ezho "step1 from job1"
 
       - name: Run a multi-line script
+        if: steps.test1.outcome == 'failure'
         run: |
           echo Add other actions to build,
           echo step2 from job1.
