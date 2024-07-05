@@ -36,6 +36,6 @@ jobs:
         age: 24
         name: matle
       run: |
-        echo ${{jobs.build.steps.step1.env.var1}}
+        echo ${{job.build.steps.step1.env.var1}}
         echo ${{env.name}}
         echo ${{env.age}}
