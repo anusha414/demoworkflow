@@ -22,6 +22,7 @@ jobs:
         run: echo Hello, world!
 
       - name: custom environment variables
+        id: step1
         env:
           var1: 27
         run: |
@@ -35,6 +36,6 @@ jobs:
         age: 24
         name: matle
       run: |
-        echo ${{env.var1}}
+        echo ${{jobs.build.steps.step1.env.var1}}
         echo ${{env.name}}
         echo ${{env.age}}
