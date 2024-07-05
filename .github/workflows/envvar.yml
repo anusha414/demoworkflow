@@ -9,7 +9,6 @@ on:
   workflow_dispatch:
 
 env:
-  var1: 20
   name: anusha
 
 jobs:
@@ -23,6 +22,8 @@ jobs:
         run: echo Hello, world!
 
       - name: custom environment variables
+        env:
+          var1: 27
         run: |
           echo ${{env.var1}}
           echo ${{env.name}}
