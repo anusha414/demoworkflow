@@ -14,7 +14,7 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +24,16 @@ jobs:
 
       - name: custom environment variables
         run: |
-          echo $var1
           echo ${{env.var1}}
           echo ${{env.name}}
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: display1
+      env:
+        age: 24
+        name: matle
+      run: |
+        echo ${{env.var1}}
+        echo ${{env.name}}
+        echo ${{env.age}}
