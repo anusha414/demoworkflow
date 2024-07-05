@@ -39,3 +39,9 @@ jobs:
         echo ${{job.build.steps.step1.env.var1}}
         echo ${{env.name}}
         echo ${{env.age}}
+    - name: secrets variables
+      run : |
+        echo ${{secrets.username}}
+        echo ${{secrets.password}}
+        echo $username
+        echo $secrets.username
