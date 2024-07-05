@@ -8,6 +8,10 @@ on:
     branches: [ "master" ]
   workflow_dispatch:
 
+env:
+  var1: 20
+  name: anusha
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,5 +22,8 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name: default environment variables
-        run: env
+      - name: custom environment variables
+        run: |
+          echo $var1
+          echo ${{env.var1}}
+          echo ${{env.name}}
