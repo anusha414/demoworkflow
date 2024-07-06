@@ -19,16 +19,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run a one-line script
-        run: echo Hello, world!
+      # - name: Run a one-line script
+      #   run: echo Hello, world!
 
-      - name: custom environment variables
-        id: step1
-        env:
-          var1: 27
-        run: |
-          echo ${{env.var1}}
-          echo ${{env.name}}
+      # - name: custom environment variables
+      #   id: step1
+      #   env:
+      #     var1: 27
+      #   run: |
+      #     echo ${{env.var1}}
+      #     echo ${{env.name}}
       - name: environment secrets
         run: |
           echo ${{secrets.company}}
@@ -38,20 +38,20 @@ jobs:
     environment: stage
     runs-on: ubuntu-latest
     steps:
-    - name: display1
-      env:
-        age: 24
-        name: matle
-      run: |
-        echo ${{job.build.steps.step1.env.var1}}
-        echo ${{env.name}}
-        echo ${{env.age}}
-    - name: secrets variables
-      run : |
-        echo ${{secrets.username}}
-        echo ${{secrets.password}}
-        echo $username
-        echo $secrets.username
+    # - name: display1
+    #   env:
+    #     age: 24
+    #     name: matle
+    #   run: |
+    #     echo ${{job.build.steps.step1.env.var1}}
+    #     echo ${{env.name}}
+    #     echo ${{env.age}}
+    # - name: secrets variables
+    #   run : |
+    #     echo ${{secrets.username}}
+    #     echo ${{secrets.password}}
+    #     echo $username
+    #     echo $secrets.username
 
     - name: environment secrets
       run: echo ${{secrets.company}}
