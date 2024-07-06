@@ -13,6 +13,7 @@ env:
 
 jobs:
   build:
+    environment: test
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +29,13 @@ jobs:
         run: |
           echo ${{env.var1}}
           echo ${{env.name}}
+      - name: environment secrets
+        run: |
+          echo ${{secrets.company}}
+       
+    
   test:
+    environment: stage
     runs-on: ubuntu-latest
     steps:
     - name: display1
@@ -45,3 +52,6 @@ jobs:
         echo ${{secrets.password}}
         echo $username
         echo $secrets.username
+
+    - name: environment secrets
+      run: echo ${{secrets.company}}
