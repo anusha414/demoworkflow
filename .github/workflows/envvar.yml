@@ -13,7 +13,6 @@ env:
 
 jobs:
   build:
-    environment: test
     runs-on: ubuntu-latest
 
     steps:
@@ -29,13 +28,18 @@ jobs:
       #   run: |
       #     echo ${{env.var1}}
       #     echo ${{env.name}}
-      - name: environment secrets
+      # - name: environment secrets
+      #   run: |
+      #     echo ${{secrets.company}}
+
+      - name: repository variables
         run: |
-          echo ${{secrets.company}}
+          echo ${{vars.name}}
+          echo ${{vars.company}}
        
     
   test:
-    environment: stage
+    environment: envtest
     runs-on: ubuntu-latest
     steps:
     # - name: display1
@@ -53,5 +57,9 @@ jobs:
     #     echo $username
     #     echo $secrets.username
 
-    - name: environment secrets
-      run: echo ${{secrets.company}}
+    # - name: environment secrets
+    #   run: echo ${{secrets.company}}
+    - name: environment variables
+      run: |
+          echo ${{vars.name}}
+          echo ${{vars.company}}
