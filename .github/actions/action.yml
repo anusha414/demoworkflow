@@ -6,3 +6,6 @@ runs:
   - name: step1
     run: echo "this is my first composite action"
     shell: bash
+  - name: step2
+    run: echo "this is my second action"
+    shell: bash
