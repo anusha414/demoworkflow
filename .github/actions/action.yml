@@ -1,0 +1,8 @@
+name: first composite action
+description: learning about composite actions
+runs:
+  using: 'composite'
+  steps:
+  - name: step1
+    runs: echo "this is my first composite action"
+    shell: bash
